@@ -42,7 +42,9 @@ h1 {
 
 .card-list {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    /* grid-template-columns: repeat(4, 1fr); */
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+
     grid-gap: 40px;
     margin-bottom: 60px;
 }
@@ -78,3 +80,33 @@ button:hover{
     background: white;
     color: #222;
 }
+
+
+
+
+@keyframes show-li{
+    from{
+        opacity: 0.4;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+
+
+li:hover{
+    animation-name: show-li;
+    animation-duration: 0.5s;
+    animation-iteration-count: 1;
+}
+
+ul:hover li {
+ opacity: 0.4;
+}
+
+ul:hover li:hover {
+    opacity: 1;
+}
+
+
